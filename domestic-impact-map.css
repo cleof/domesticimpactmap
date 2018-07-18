@@ -144,3 +144,7 @@ ul {
 .last-clicked {
     fill: #C1A783 !important;
 }
+
+.state-list {
+    /* format list font */
+}
