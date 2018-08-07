@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="53px" height="12px" viewBox="0 0 53 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>Stars</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="v2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="USA-Overview-(Kansas-Selected)" transform="translate(-70.000000, -592.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="1280" height="3294"></rect>
+            <g id="Header" transform="translate(69.000000, 592.000000)" fill="#C1A783">
+                <g id="Stars" transform="translate(1.000000, 0.000000)">
+                    <polygon id="Star-2" points="6.5 9.2868116 2.48277907 12 3.9 7.45337474 -3.94684285e-14 4.58359214 4.89311163 4.4868116 6.5 0 8.10688837 4.4868116 13 4.58359214 9.1 7.45337474 10.5172209 12"></polygon>
+                    <polygon id="Star-2" points="26.5 9.2868116 22.4827791 12 23.9 7.45337474 20 4.58359214 24.8931116 4.4868116 26.5 0 28.1068884 4.4868116 33 4.58359214 29.1 7.45337474 30.5172209 12"></polygon>
+                    <polygon id="Star-2" points="46.5 9.2868116 42.4827791 12 43.9 7.45337474 40 4.58359214 44.8931116 4.4868116 46.5 0 48.1068884 4.4868116 53 4.58359214 49.1 7.45337474 50.5172209 12"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
