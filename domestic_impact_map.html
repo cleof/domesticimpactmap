@@ -1,4 +1,3 @@
-<!-- Make text smaller for small screens -->
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -12,7 +11,8 @@
       <!-- Import google font -->
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-   </head>
+      <script type="text/javascript" src="js/state_data.js"></script>
+    </head>
    <body>
       <div class="map-version container" id="container">
          <div class="row">
@@ -281,9 +281,11 @@
                   <button onclick="toggleVersion()" class="text-only text-centered text-uppercase">Text only version</button>
                </div>
                <script>
-                  var gold = "#C1A783";
-                  var gray = "#aaaaaa";
-                  
+
+                // theme colors
+                var gold = "#C1A783";
+                var gray = "#aaaaaa";
+
                 //   Fills in small states and label rects with gold
                 function smallStateMouseover(state_class) {
                     var state_path = 'g' + state_class + ' path';
@@ -302,17 +304,18 @@
                 
                 //   Hover functions for small states
                 var smallStates = new Array('.VT', '.NH', '.MA', '.RI', '.CT', '.NJ', '.DE', '.MD', '.DC');
-                $(smallStates[0]).hover(function() {smallStateMouseover(smallStates[0])}, function () {smallStateMouseout(smallStates[0])});
-                $(smallStates[1]).hover(function() {smallStateMouseover(smallStates[1])}, function () {smallStateMouseout(smallStates[1])});
-                $(smallStates[2]).hover(function() {smallStateMouseover(smallStates[2])}, function () {smallStateMouseout(smallStates[2])});
-                $(smallStates[3]).hover(function() {smallStateMouseover(smallStates[3])}, function () {smallStateMouseout(smallStates[3])});
-                $(smallStates[4]).hover(function() {smallStateMouseover(smallStates[4])}, function () {smallStateMouseout(smallStates[4])});
-                $(smallStates[5]).hover(function() {smallStateMouseover(smallStates[5])}, function () {smallStateMouseout(smallStates[5])});
-                $(smallStates[6]).hover(function() {smallStateMouseover(smallStates[6])}, function () {smallStateMouseout(smallStates[6])});
-                $(smallStates[7]).hover(function() {smallStateMouseover(smallStates[7])}, function () {smallStateMouseout(smallStates[7])});
-                $(smallStates[8]).hover(function() {smallStateMouseover(smallStates[8])}, function () {smallStateMouseout(smallStates[8])});
-                $(smallStates[9]).hover(function() {smallStateMouseover(smallStates[9])}, function () {smallStateMouseout(smallStates[9])});
-                
+
+                // hover directions for smal states
+                for(let i = 0; i < 10; i++) {
+                  $(smallStates[i]).hover(
+                     function() {
+                        smallStateMouseover(smallStates[i]);
+                     },
+                     function() {
+                        smallStateMouseout(smallStates[i]);
+                     })
+               }
+
                 //   Fills in small states with gray
                 function bigStateMouseover(state_class) {
                     var state_path = 'path' + state_class;
@@ -328,50 +331,19 @@
                 var bigStates = new Array('.HI', '.AK', '.FL', '.MI', '.ME', '.NY', '.PA', '.VA', '.WV', '.OH', '.IN', '.IL', '.WI', '.NC', '.TN', '.AR',
                     '.MO', '.GA', '.SC', '.KY', '.AL', '.LA', '.MS', '.IA', '.MN', '.OK', '.TX', '.NM', '.KS', '.NE', '.SD', '.ND', '.WY', '.MT', '.CO', '.ID', '.UT', '.AZ',
                     '.NV', '.OR', '.WA', '.CA');
-                
-                $(bigStates[0]).hover(function() {bigStateMouseover(bigStates[0])}, function() {bigStateMouseout(bigStates[0])});
-                $(bigStates[1]).hover(function() {bigStateMouseover(bigStates[1])}, function() {bigStateMouseout(bigStates[1])}); 
-                $(bigStates[2]).hover(function() {bigStateMouseover(bigStates[2])}, function() {bigStateMouseout(bigStates[2])}); 
-                $(bigStates[3]).hover(function() {bigStateMouseover(bigStates[3])}, function() {bigStateMouseout(bigStates[3])}); 
-                $(bigStates[4]).hover(function() {bigStateMouseover(bigStates[4])}, function() {bigStateMouseout(bigStates[4])}); 
-                $(bigStates[5]).hover(function() {bigStateMouseover(bigStates[5])}, function() {bigStateMouseout(bigStates[5])}); 
-                $(bigStates[6]).hover(function() {bigStateMouseover(bigStates[6])}, function() {bigStateMouseout(bigStates[6])}); 
-                $(bigStates[7]).hover(function() {bigStateMouseover(bigStates[7])}, function() {bigStateMouseout(bigStates[7])}); 
-                $(bigStates[8]).hover(function() {bigStateMouseover(bigStates[8])}, function() {bigStateMouseout(bigStates[8])}); 
-                $(bigStates[9]).hover(function() {bigStateMouseover(bigStates[9])}, function() {bigStateMouseout(bigStates[9])}); 
-                $(bigStates[10]).hover(function() {bigStateMouseover(bigStates[10])}, function() {bigStateMouseout(bigStates[10])}); 
-                $(bigStates[11]).hover(function() {bigStateMouseover(bigStates[11])}, function() {bigStateMouseout(bigStates[11])}); 
-                $(bigStates[12]).hover(function() {bigStateMouseover(bigStates[12])}, function() {bigStateMouseout(bigStates[12])}); 
-                $(bigStates[13]).hover(function() {bigStateMouseover(bigStates[13])}, function() {bigStateMouseout(bigStates[13])}); 
-                $(bigStates[14]).hover(function() {bigStateMouseover(bigStates[14])}, function() {bigStateMouseout(bigStates[14])}); 
-                $(bigStates[15]).hover(function() {bigStateMouseover(bigStates[15])}, function() {bigStateMouseout(bigStates[15])}); 
-                $(bigStates[16]).hover(function() {bigStateMouseover(bigStates[16])}, function() {bigStateMouseout(bigStates[16])}); 
-                $(bigStates[17]).hover(function() {bigStateMouseover(bigStates[17])}, function() {bigStateMouseout(bigStates[17])}); 
-                $(bigStates[18]).hover(function() {bigStateMouseover(bigStates[18])}, function() {bigStateMouseout(bigStates[18])}); 
-                $(bigStates[19]).hover(function() {bigStateMouseover(bigStates[19])}, function() {bigStateMouseout(bigStates[19])}); 
-                $(bigStates[20]).hover(function() {bigStateMouseover(bigStates[20])}, function() {bigStateMouseout(bigStates[20])}); 
-                $(bigStates[21]).hover(function() {bigStateMouseover(bigStates[21])}, function() {bigStateMouseout(bigStates[21])}); 
-                $(bigStates[22]).hover(function() {bigStateMouseover(bigStates[22])}, function() {bigStateMouseout(bigStates[22])}); 
-                $(bigStates[23]).hover(function() {bigStateMouseover(bigStates[23])}, function() {bigStateMouseout(bigStates[23])}); 
-                $(bigStates[24]).hover(function() {bigStateMouseover(bigStates[24])}, function() {bigStateMouseout(bigStates[24])}); 
-                $(bigStates[25]).hover(function() {bigStateMouseover(bigStates[25])}, function() {bigStateMouseout(bigStates[25])}); 
-                $(bigStates[26]).hover(function() {bigStateMouseover(bigStates[26])}, function() {bigStateMouseout(bigStates[26])}); 
-                $(bigStates[27]).hover(function() {bigStateMouseover(bigStates[27])}, function() {bigStateMouseout(bigStates[27])}); 
-                $(bigStates[28]).hover(function() {bigStateMouseover(bigStates[28])}, function() {bigStateMouseout(bigStates[28])}); 
-                $(bigStates[29]).hover(function() {bigStateMouseover(bigStates[29])}, function() {bigStateMouseout(bigStates[29])}); 
-                $(bigStates[30]).hover(function() {bigStateMouseover(bigStates[30])}, function() {bigStateMouseout(bigStates[30])}); 
-                $(bigStates[31]).hover(function() {bigStateMouseover(bigStates[31])}, function() {bigStateMouseout(bigStates[31])}); 
-                $(bigStates[32]).hover(function() {bigStateMouseover(bigStates[32])}, function() {bigStateMouseout(bigStates[32])}); 
-                $(bigStates[33]).hover(function() {bigStateMouseover(bigStates[33])}, function() {bigStateMouseout(bigStates[33])}); 
-                $(bigStates[34]).hover(function() {bigStateMouseover(bigStates[34])}, function() {bigStateMouseout(bigStates[34])}); 
-                $(bigStates[35]).hover(function() {bigStateMouseover(bigStates[35])}, function() {bigStateMouseout(bigStates[35])}); 
-                $(bigStates[36]).hover(function() {bigStateMouseover(bigStates[36])}, function() {bigStateMouseout(bigStates[36])}); 
-                $(bigStates[37]).hover(function() {bigStateMouseover(bigStates[37])}, function() {bigStateMouseout(bigStates[37])}); 
-                $(bigStates[38]).hover(function() {bigStateMouseover(bigStates[38])}, function() {bigStateMouseout(bigStates[38])}); 
-                $(bigStates[39]).hover(function() {bigStateMouseover(bigStates[39])}, function() {bigStateMouseout(bigStates[39])}); 
-                $(bigStates[40]).hover(function() {bigStateMouseover(bigStates[40])}, function() {bigStateMouseout(bigStates[40])}); 
-                $(bigStates[41]).hover(function() {bigStateMouseover(bigStates[41])}, function() {bigStateMouseout(bigStates[41])});
-                
+               
+               // Highlight big states over upon hover
+               for(let i = 0; i < 42; i++) {
+                  $(bigStates[i]).hover(
+                     function() {
+                        bigStateMouseover(bigStates[i]);
+                     },
+                     function() {
+                        bigStateMouseout(bigStates[i]);
+                     })
+               }
+
+               // dictionary to associate abbreviation to full state name
                 state_hash =  {
                 'AL': 'Alabama',
                 'AK': 'Alaska',
@@ -437,10 +409,11 @@
                 $(document).ready(function() {
                     // iniate map view
                     mapOn();
+                    // initialize U.S. Overview data
+                    updateInfo("Totals");
 
+                    // updates screen layout on resize
                     window.addEventListener("resize", function() {
-                        console.log('is text on?: ' + $('div.text-version').hasClass('text-on'));
-                        console.log('is map on?: ' + $('div.map-version').hasClass('map-on'));
                         if (document.documentElement.clientWidth < 991) {
                             smallScreenVersion();
                         } else {
@@ -452,7 +425,7 @@
                             $('button.text-only').show();
                             $('button.overview-button').show();
                         } 
-                    }); // updates screen layout on resize
+                    }); 
                   
                     $("path.states, g, text").on('click', function() {
                         var clicked = this;
@@ -461,6 +434,7 @@
                             if ((($(clicked).closest(check_state).length) > 0)) {
                                 var state_val = state_hash[key];
                                 $("#state-header").html(state_val);
+                                updateInfo(state_val);
                                 var small_state_path = 'g' + check_state + ' path';
                                 var small_state_label = 'g' + check_state + ' rect';
                                 var big_state_path = 'path' + check_state;
@@ -473,11 +447,34 @@
                     });
                   });
                   
-                  // return to U.S. Overview
-                  function toOverview() {
-                    $("p#state-header").html("U.S. Overview");
-                    $('.last-clicked').removeClass("last-clicked");
+                  // update data information using state data
+                  // wrapper function for jobs, exchange, passports
+                  function updateInfo(state) {
+                     updateJobs(state);
+                     updateExchange(state);
+                     updatePassports(state);
                   }
+                  
+                  // update job data to state's
+                  function updateJobs(state) {
+                     $("#jobs").html(state_data[state].jobs);
+                  }
+
+                  // update exchange data to state's
+                  function updateExchange(state) {
+                     $("#exchange").html(state_data[state].travel);
+                  }
+                  
+                  // update passports data to state's
+                  function updatePassports(state) {
+                     $("#pass").html(state_data[state].passports);
+                  }
+
+                  function toOverview() {
+                    $("p#state-header").html("U.S. Overview"); // TO-DO: UPDATE INFO TO TOTALS FROM VAR
+                    updateInfo("Totals");
+                    $('.last-clicked').removeClass("last-clicked");
+                  } // return to U.S. Overview
                   
                </script>
             </div>
@@ -487,20 +484,21 @@
                   <p id="state-header" class="text-uppercase" style="text-align: center;">U.S. Overview</p>
                </div>
                <div class="job-data">
-                  <p class="info-header">73,012,000</p>
+                  <p id="jobs" class="info-header"></p>
                   <p class="info-body">jobs supported by exports and foreign direct investment (2017)</p>
                </div>
                <div class="exchange-programs">
-                  <p class="info-header">13,634</p>
+                  <p id="exchange" class="info-header"></p>
                   <p class="info-body">residents overseas on exchange through a State Department program (2015)</p>
                </div>
                <div class="passports">
-                  <p class="info-header">18,613,963</p>
+                  <p id="pass" class="info-header"></p>
                   <p class="info-body">passports issued (2017)</p>
                </div>
             </div>
          </div>
       </div>
+
       <!-- Text only version of site -->
       <div class="container text-version" id="container">
          <div class="row text-header">
@@ -561,10 +559,12 @@
                <li><a class="text-state-link" target="_blank" href="http://www.state.gov/r/pa/map/221102.htm" title="Wyoming" alt="Wyoming">Wyoming</a></li>
             </ul>
          </div>
-         <!-- Button to toggle between map and text version -->
-         <div class="row toggle-map">
-            <button onclick="toggleVersion()" class="text-only text-centered text-uppercase">Interactive map version</button>
-         </div>
+
+      <!-- Button to toggle between map and text version -->
+      <div class="row toggle-map">
+         <button onclick="toggleVersion()" class="text-only text-centered text-uppercase">Interactive map version</button>
+      </div>
+      
       </div>
       <script>
         // Button to toggle between map and text version
